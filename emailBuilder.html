@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Email Builder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="email">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="border-right">
+                        <div class="mb-2 mt-5">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#createTitle">
+                                Добавить Заголовок
+                            </button>
+                        </div>
+                        <div class="mb-2">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#createText">
+                                Добавить Текст
+                            </button>
+                        </div>
+                        <div class="mb-2 mt-5">
+                               <button class="btn btn-primary" onClick="download()">Сохранить документ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="email-wrap" id="emailWrap">
+                        <div>
+                            <img height="auto" src="https://starway.pro/app/template/email_1/starway-logo7.png" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%; max-width: 180px;margin: 0 auto;padding-bottom: 30px;" title="" width="180">
+                    </div>
+                            <div>
+                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:1;text-align:center;color:#f5dc6e;">
+                                    Зарабатывайте больше уже сейчас!
+                                </div>
+                            </div>
+                            <div class="text-wrap">
+                                <div class="title-wrap"></div>
+                                <div class="text-items"></div>
+                                <div class="divider-strw"></div>
+                                <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;line-height:24px;text-align:left;color:#ab1a2d; margin-top: 10px;">
+                                    Ваша команда Starway ❤️
+                                </div>
+                            </div>
+                            <div style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1;text-align:center;color:#f5dc6e;margin-top: 20px">
+                                Вы получили это письмо, т.к. регистрировались на сайте партнерской программы <a style="text-decoration: none;color: inherit;" href="https://starway.pro/">Starway.pro</a>. Вы можете отписаться от рассылки в любой момент.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade " id="createText" tabindex="-1" role="dialog" aria-labelledby="createText" aria-hidden="true">
+                    <div class="modal-dialog modal-text" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!--<h5 class="modal-title" id="">Modal title</h5>-->
+                                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                                <!--<span aria-hidden="true">&times;</span>-->
+                                <!--</button>-->
+                            </div>
+                            <div class="modal-body">
+                                <div id="text">
+                                    <textarea class="form-control text-value" type="text" value="" id="saveTextAreaVal" placeholder="Добавить текст"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="saveTextArea">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="createTitle" tabindex="-1" role="dialog" aria-labelledby="createTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                                <!--&lt;!&ndash;<button type="button" class="close" data-dismiss="modal" aria-label="Close">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span aria-hidden="true">&times;</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                            </div>
+                            <div class="modal-body">
+                                <div id="title">
+                                    <input class="form-control" type="text" value="" id="saveTitleVal" placeholder="Добавить Заголовок" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id="saveTitle" data-dismiss="modal">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="createImg" tabindex="-1" role="dialog" aria-labelledby="createImg" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                                <!--&lt;!&ndash;<button type="button" class="close" data-dismiss="modal" aria-label="Close">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span aria-hidden="true">&times;</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+        .email-wrap {
+            background: #191c21;
+            background-color: #191c21;
+            margin: 0px auto;
+            max-width: 600px;
+            padding: 15px;
+        }
+
+        .modal-text {
+            max-width: 900px !important;
+        }
+
+        .title-email {
+            font-family: Ubuntu, Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: left;
+            color: #ab1a2d;
+            margin-bottom: 20px;
+        }
+
+        img#output {
+            max-width: 570px;
+        }
+
+        .text-wrap {
+            margin-top: 20px;
+            background: #fff;
+            padding: 10px 25px;
+            word-break: break-word;
+            font-family: Ubuntu, Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            line-height: 24px;
+            text-align: left;
+            color: #000000;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .divider-strw {
+            border-top: solid 5px #ab1a2d;
+            margin: 0px auto;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .modal-content{
+            overflow: auto;
+            max-height: 90vh;
+        }
+        .modal-footer{
+            margin-bottom: 20px;
+            padding-top: 25px;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+        <script>
+        var summernoteValue;
+        var titleValue;
+        $(document).ready(function() {
+            $('.text-value').summernote();
+            $('#saveTitle').on('click', function() {
+                var titleValue = $('#saveTitleVal').val();
+                $('.title-wrap').prepend('<div class="title-email">' + titleValue + '</div>');
+            });
+
+            $('#saveTextArea').on('click', function() {
+                var saveTextAreaVal = $('#saveTextAreaVal').val();
+                $('.text-items').prepend('<div class="text-block">' + saveTextAreaVal + '</div>');
+            });
+        });
+        function download(){
+            var a = document.body.appendChild(
+                document.createElement("a")
+            );
+            a.download = "export.html";
+            a.href = "data:text/html," + document.getElementById("emailWrap").innerHTML;
+            a.click();
+}
+        </script>
+</body>
+
+</html>
